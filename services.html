@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services | Tehniat Designs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-teal: #008080; --dark-green: #013220; --light-bg: #f4f8f8; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); margin: 0; }
+        
+        header { background: var(--dark-green); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--primary-teal); }
+
+        .services-header { text-align: center; padding: 60px 10%; background: linear-gradient(135deg, var(--dark-green), var(--primary-teal)); color: white; }
+        
+        .services-detail { padding: 80px 10%; }
+        .service-row { display: flex; align-items: center; gap: 50px; margin-bottom: 60px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .service-row:nth-child(even) { flex-direction: row-reverse; }
+        
+        .service-info { flex: 1.5; }
+        .service-info h2 { color: var(--dark-green); margin-bottom: 15px; }
+        .service-info p { line-height: 1.6; color: #555; }
+        .service-icon { flex: 1; text-align: center; font-size: 5rem; color: var(--primary-teal); }
+
+         .footer {
+        background-color: #002211; /* Dark Green jaisa aap ki image mein hai */
+        color: #ffffff;
+        padding: 60px 10% 20px;
+        font-family: 'Poppins', sans-serif;
+        border-top: 2px solid #068066; /* Teal accent color */
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+        color: #00ffaa; /* Neon green for branding */
+        margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+        color: #a0a0a0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-links h4 {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #068066;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+        color: #00ffaa;
+        padding-left: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #068066;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #068066;
+        text-decoration: none;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .social-icons a:hover {
+        background-color: #068066;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(6, 128, 102, 0.4);
+    }
+
+    .copyright-bar {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85rem;
+        color: #777;
+    }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-section"><img src="of_logo 1.png" width="45" style="border-radius:50%"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="services-header">
+    <h1>Professional Digital Solutions</h1>
+    <p>Empowering your business through high-quality visual branding and technical excellence.</p>
+</div>
+
+<section class="services-detail">
+    <div class="service-row">
+        <div class="service-info">
+            <h2>Modern Web Development</h2>
+            <p>I build fast, responsive, and user-friendly websites. From custom HTML/CSS coding to professional WordPress and Elementor setups, I ensure your online presence is perfect across all devices.</p>
+        </div>
+        <div class="service-icon">🌐</div>
+    </div>
+
+    <div class="service-row">
+        <div class="service-info">
+            <h2>Creative Graphic Design</h2>
+            <p>Using industry-leading tools like CorelDraw and Photoshop, I design impactful logos, social media marketing materials, and brand assets that capture your audience's attention.</p>
+        </div>
+        <div class="service-icon">🎨</div>
+    </div>
+
+    <div class="service-row">
+        <div class="service-info">
+            <h2>IT & Office Solutions</h2>
+            <p>With advanced expertise in MS Office and database management, I provide organized administrative and technical support to keep your business operations running smoothly.</p>
+        </div>
+        <div class="service-icon">💻</div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>Tehniat Designs</h2>
+            <p>High-end graphic and web solutions tailored to client requirements. Professionalism in every pixel.</p>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Quick Nav</h4>
+            <ul>
+                <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li>📍 Rawalpindi, Pakistan</li>
+                <li>📧 tehniattehniat0@gmail.com </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="http://www.linkedin.com/in/tehniat-💫-93b7143aa target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+   <a href="https://www.fiverr.com/tehniattehni144" target="_blank" class="social-icon fiverr-btn">
+    fi.
+</a>
+
+    <a href="https://www.facebook.com/profile.php?id=61569261904781" target="_blank" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/tehniyat007" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@tehniat.mustafa?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon">
+    <i class="fab fa-tiktok"></i>
+</a>
+    </div>
+
+    <div class="copyright-bar">
+        © 2026 Tech Trio | Tehniat Designs | Rawalpindi, Pakistan
+    </div>
+</footer>
+
+</body>
+</html>

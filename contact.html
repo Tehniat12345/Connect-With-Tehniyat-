@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Tehniat Designs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-teal: #008080; --dark-green: #013220; --light-bg: #f4f8f8; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); margin: 0; }
+        
+        header { background: var(--dark-green); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--primary-teal); }
+
+        .contact-page { display: flex; padding: 80px 10%; gap: 50px; }
+        .contact-info { flex: 1; background: var(--dark-green); color: white; padding: 40px; border-radius: 20px; }
+        .contact-info h2 { color: var(--primary-teal); }
+        .info-item { margin-top: 30px; }
+        
+        .contact-form-side { flex: 1.5; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .contact-form-side input, .contact-form-side textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        .send-btn { background: var(--primary-teal); color: white; border: none; padding: 15px 30px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: 600; }
+
+        .footer {
+        background-color: #002211; /* Dark Green jaisa aap ki image mein hai */
+        color: #ffffff;
+        padding: 60px 10% 20px;
+        font-family: 'Poppins', sans-serif;
+        border-top: 2px solid #068066; /* Teal accent color */
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+        color: #00ffaa; /* Neon green for branding */
+        margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+        color: #a0a0a0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-links h4 {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #068066;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+        color: #00ffaa;
+        padding-left: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #068066;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #068066;
+        text-decoration: none;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .social-icons a:hover {
+        background-color: #068066;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(6, 128, 102, 0.4);
+    }
+
+    .copyright-bar {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85rem;
+        color: #777;
+    }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-section"><img src="of_logo 1.png" width="45" style="border-radius:50%"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="contact-page">
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p>Feel free to reach out for new projects, collaborations, or just a friendly design consultation.</p>
+        
+        <div class="info-item">
+            <strong>Location:</strong><br>Rawalpindi, Pakistan
+        </div>
+        <div class="info-item">
+            <strong>Email:</strong><br>tehniattehniat0@gmail.com
+        </div>
+        <div class="info-item">
+            <strong>Availability:</strong><br>Mon - Sat (2:30 PM - 6 PM)
+        </div>
+    </div>
+
+    <div class="contact-form-side">
+        <h2>Send a Message</h2>
+        <form action="https://formspree.io/f/xzdyjnpz" method="POST">
+    <input type="text" name="name" placeholder="Your Full Name" required>
+    
+    <input type="email" name="_replyto" placeholder="Email Address" required>
+    
+    <input type="text" name="subject" placeholder="Project Type (e.g., Logo, Website)">
+    
+    <textarea name="message" placeholder="Describe your project requirements here..." rows="6" required></textarea>
+    
+    <button type="submit" class="send-btn">Send Message</button>
+</form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>Tehniat Designs</h2>
+            <p>High-end graphic and web solutions tailored to client requirements. Professionalism in every pixel.</p>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Quick Nav</h4>
+            <ul>
+                <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li>📍 Rawalpindi, Pakistan</li>
+                <li>📧 tehniattehniat0@gmail.com </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="http://www.linkedin.com/in/tehniat-💫-93b7143aa target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+   <a href="https://www.fiverr.com/tehniattehni144" target="_blank" class="social-icon fiverr-btn">
+    fi.
+</a>
+
+    <a href="https://www.facebook.com/profile.php?id=61569261904781" target="_blank" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/tehniyat007" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@tehniat.mustafa?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon">
+    <i class="fab fa-tiktok"></i>
+</a>
+    </div>
+
+    <div class="copyright-bar">
+        © 2026 Tech Trio | Tehniat Designs | Rawalpindi, Pakistan
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehniat Designs | Premium Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --accent: #068066; /* Aapka bataya hua Teal color */
+            --bg: #f9f9f9;
+            --dark: #002211;
+        }
+        :root {
+            --primary-teal: #008080;
+            --dark-green: #013220;
+            --light-bg: #f0f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+  header {
+            background: var(--dark-green);
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            border-bottom: 3px solid var(--primary-teal);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--primary-teal); }
+        body {
+            background-color: var(--bg);
+            color: #333;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
+            border: 1px solid #eee;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(6, 128, 102, 0.15);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: left;
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer Styling */
+        
+        .footer {
+        background-color: #002211; /* Dark Green jaisa aap ki image mein hai */
+        color: #ffffff;
+        padding: 60px 10% 20px;
+        font-family: 'Poppins', sans-serif;
+        border-top: 2px solid #068066; /* Teal accent color */
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+        color: #00ffaa; /* Neon green for branding */
+        margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+        color: #a0a0a0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-links h4 {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #068066;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+        color: #00ffaa;
+        padding-left: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #068066;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #068066;
+        text-decoration: none;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .social-icons a:hover {
+        background-color: #068066;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(6, 128, 102, 0.4);
+    }
+
+    .copyright-bar {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85rem;
+        color: #777;
+    }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="logo-section">
+            <img src="of_logo 1.png" alt="of_logo 1">
+            <h2>Tehniat Designs</h2>
+        </div>
+        <nav>
+             <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="projects-section">
+        <div class="section-header">
+            <h2>My Designs</h2>
+            <p>A collection of premium web and graphic design projects.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="img-box"><img src="c:\Users\Tehniyat\OneDrive\Pictures\web.JPG" alt="Fashion Design"></div>
+                <div class="card-content">
+                    <span class="project-tag">Elevating Brands through Strategic Design & Code.</span>
+                    <h3>Concrete Dreams</h3>
+                    <p>I specialize in crafting high-end web solutions and professional graphic identities that help businesses stand out in the digital landscape.</strong>, focusing on minimalist aesthetics and smooth user journey.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-box"><img src="car.JPG" alt="Car Rental"></div>
+                <div class="card-content">
+                    <span class="project-tag">UI/UX Strategy</span>
+                    <h3>Elite Car Rentals</h3>
+                    <p>Designed a premium car rental landing page with a focus on <strong>conversion-ready forms</strong> and high-performance car imagery.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-box"><img src="coffe.JPG" alt="Coffee Brand"></div>
+                <div class="card-content">
+                    <span class="project-tag">Brand Identity</span>
+                    <h3>Brewing Excellence</h3>
+                    <p>Creative brand identity for an organic coffee shop, featuring custom typography and organic color palettes crafted in <strong>CorelDraw</strong>.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-box"><img src="c:\Users\Tehniyat\Downloads\my first website\food.PNG" alt="Healthy Food"></div>
+                <div class="card-content">
+                    <span class="project-tag">Visual Design</span>
+                    <h3>Healthy Souls</h3>
+                    <p>Vibrant social media and web assets for a healthy meal delivery service, ensuring a fresh and appetizing digital presence.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-box"><img src="login.JPG" alt="LMS Portal"></div>
+                <div class="card-content">
+                    <span class="project-tag">Web Development</span>
+                    <h3>PraRoz Learning</h3>
+                    <p>Developed a professional login portal and dashboard for an online course platform using clean <strong>HTML/CSS</strong> and dark-mode UI.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-box"><img src="form 2.JPG" alt="Hotel Form"></div>
+                <div class="card-content">
+                    <span class="project-tag">System Design</span>
+                    <h3>Bhola Continental</h3>
+                    <p>A complex hotel reservation management system featuring <strong>custom UI components</strong> for efficient booking and user management.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="img-box"><img src="build .png" alt="Hotel Form"></div>
+                <div class="card-content">
+                    <span class="project-tag">Design Strategy</span>
+                    <h3>Strategic Brand Architecture</h3>
+                    <p>From conceptual sketches to final vector output. This project showcases the complete design lifecycle: Research, Ideation, Sketching, and Digital Execution in CorelDraw.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="img-box"><img src="coffee.png" alt="Hotel Form"></div>
+                <div class="card-content">
+                    <span class="project-tag">Logo Branding</span>
+                    <h3>Brewing Excellence Identity</h3>
+                    <p>A minimalist and sophisticated logo design for a premium coffee brand. Focused on organic elements and bold typography to create a warm, inviting brand feel.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="img-box"><img src="tehniyat.png" alt="Hotel Form"></div>
+                <div class="card-content">
+                    <span class="project-tag">Identity Design</span>
+                    <h3>Tehniat Designs Visual Identity</h3>
+                    <p>A custom-crafted brand mark representing creativity and professional integrity. Designed with precision vectors to ensure scalability and brand recognition.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="img-box"><img src="fresh root.png" alt="Hotel Form"></div>
+                <div class="card-content">
+                    <span class="project-tag">Product Branding</span>
+                    <h3>FreshRoot Organic Identity</h3>
+                    <p>Vibrant and fresh visual branding for a health-conscious juice or smoothie brand. Designed to evoke feelings of nature, health, and revitalization through clean vector art.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>Tehniat Designs</h2>
+            <p>High-end graphic and web solutions tailored to client requirements. Professionalism in every pixel.</p>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Quick Nav</h4>
+            <ul>
+                <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li>📍 Rawalpindi, Pakistan</li>
+                <li>📧 tehniattehniat0@gmail.com </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="http://www.linkedin.com/in/tehniat-💫-93b7143aa target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+   <a href="https://www.fiverr.com/tehniattehni144" target="_blank" class="social-icon fiverr-btn">
+    fi.
+</a>
+
+    <a href="https://www.facebook.com/profile.php?id=61569261904781" target="_blank" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/tehniyat007" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@tehniat.mustafa?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon">
+    <i class="fab fa-tiktok"></i>
+</a>
+    </div>
+
+    <div class="copyright-bar">
+        © 2026 Tech Trio | Tehniat Designs | Rawalpindi, Pakistan
+    </div>
+</footer>
+
+</body>
+</html>

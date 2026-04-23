@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehniat Designs | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #008080;
+            --dark-green: #013220;
+            --light-bg: #f0f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background: var(--dark-green);
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            border-bottom: 3px solid var(--primary-teal);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--primary-teal); }
+        .main-banner {
+            background: linear-gradient(rgba(1, 50, 32, 0.7), rgba(0, 128, 128, 0.7)), 
+                url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070') 
+                no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: -50px 5% 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+            border-bottom: 5px solid var(--primary-teal);
+        }
+
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card h3 { color: var(--dark-green); margin-bottom: 15px; }
+
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: "✔";
+            color: var(--primary-teal);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .bottom-info { padding: 40px 10%; text-align: center; }
+
+        .hire-btn {
+            background: var(--primary-teal);
+            color: white;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            background: #ddd;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 128, 128, 0.8);
+            color: white;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .portfolio-item:hover .overlay { opacity: 1; }
+
+        /* Bento-style container for video */
+    .bento-video-card {
+        background: rgba(255, 255, 255, 0.03); /* Transparent card look */
+        border: 1px solid rgba(255, 255, 255, 0.05); /* Match other bento boxes */
+        border-radius: 30px; /* Professional rounded corners */
+        overflow: hidden; /* Important for border radius to work */
+        position: relative;
+        padding: 20px;
+        transition: 0.4s ease;
+        grid-column: span 2; /* Bento grid specific - adjust span if needed */
+        margin-top: 20px;
+    }
+
+    /* Professional hover glow effect */
+    .bento-video-card:hover {
+        border-color: #068066; /* Your specific teal accent color */
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(6, 128, 102, 0.15); /* Teal glow */
+    }
+
+    /* Stylized video controls hint (optional, professional look) */
+    .video-hint {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(0,0,0,0.5);
+        color: #ccc;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        z-index: 2;
+    }
+        .reviews-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .review-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-teal);
+        }
+        .review-card h4 { margin-top: 10px; color: var(--primary-teal); }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+    .footer-social-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .social-icon {
+        color: #068066; /* Aapka Teal Color */
+        font-size: 24px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border: 2px solid #068066;
+        border-radius: 50%;
+    }
+
+    .fiverr-btn {
+        font-family: 'Arial', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+    }
+
+    .social-icon:hover {
+        background-color: #068066;
+        color: #ffffff;
+        transform: translateY(-5px);
+    }
+        .footer {
+        background-color: #002211; /* Dark Green jaisa aap ki image mein hai */
+        color: #ffffff;
+        padding: 60px 10% 20px;
+        font-family: 'Poppins', sans-serif;
+        border-top: 2px solid #068066; /* Teal accent color */
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+        color: #00ffaa; /* Neon green for branding */
+        margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+        color: #a0a0a0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .footer-links h4 {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #068066;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+        color: #00ffaa;
+        padding-left: 5px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #068066;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #068066;
+        text-decoration: none;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .social-icons a:hover {
+        background-color: #068066;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(6, 128, 102, 0.4);
+    }
+
+    .copyright-bar {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85rem;
+        color: #777;
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="of_logo 1.png" alt="of_logo 1">
+            <h2>Tehniat Designs</h2>
+        </div>
+        <nav>
+             <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main-banner">
+        <h1>Creative & Technical Solutions</h1>
+        <p>Expert Freelance Services Tailored for Your Growth</p>
+    </section>
+
+    <div class="services-container">
+        <div class="service-card">
+            <h3>Web Development</h3>
+            <ul>
+                <li>HTML / CSS / JavaScript</li>
+                <li>WordPress Development</li>
+                <li>Elementor Page Building</li>
+                <li>Responsive Web Design</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <h3>Graphic Design</h3>
+            <ul>
+                <li>CorelDraw Expertise</li>
+                <li>Adobe Photoshop</li>
+                <li>Branding & Logo Design</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <h3>Office Management</h3>
+            <ul>
+                <li>MS Office Mastery</li>
+                <li>Ms Word </li>
+                <li>Ms Excel</li>
+                <li>Data Entry</li>
+                <li>Task & Data Organization</li>
+                <li>Professional Presentations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom-info">
+        <h3>Ready to start your next project?</h3>
+        <p>I am available for freelance opportunities in Rawalpindi and remotely.</p>
+        <a href="mailto:tehniattehniat0@gmail.com" class="hire-btn">Hire Me Now</a>
+    </div>
+    <section class="portfolio-section" style="padding: 60px 10%; background: #fff;">
+        <h2 style="text-align: center; color: var(--dark-green); margin-bottom: 40px;">My Recent Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="page.JPG" alt="Web Design Project">
+                <div class="overlay">
+                    <p>WordPress Website</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="c:\Users\Tehniyat\Downloads\Gemini_Generated_Image_wd8zp0wd8zp0wd8z.png" alt="Logo Design">
+                <div class="overlay">
+                    <p>Bussiness Card  Design</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="bento-video-card">
+    <div class="video-hint">Process Showcase <i class="fas fa-play"></i></div>
+
+    <video autoplay muted loop playsinline poster="Driven by the Future VIDEO.mp4.jpg" style="width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); display: block;">
+        <source src="Driven by the Future VIDEO.mp4" type="video/mp4"></video>
+                <div class="overlay">
+                    <p>Powerpoint Presentation </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section" style="padding: 60px 10%; background: var(--light-bg);">
+        <h2 style="text-align: center; color: var(--dark-green); margin-bottom: 40px;">What Clients Say</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p>"Tehniat is an amazing designer. The logo she made in CorelDraw was exactly what I needed!"</p>
+                
+            </div>
+            <div class="review-card">
+                <p>"Excellent web development skills. My Elementor site looks professional and fast."</p>
+            
+            </div>
+        </div>
+    </section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>Tehniat Designs</h2>
+            <p>High-end graphic and web solutions tailored to client requirements. Professionalism in every pixel.</p>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Quick Nav</h4>
+            <ul>
+                <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li>📍 Rawalpindi, Pakistan</li>
+                <li>📧 tehniattehniat0@gmail.com </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="http://www.linkedin.com/in/tehniat-💫-93b7143aa target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+   <a href="https://www.fiverr.com/tehniattehni144" target="_blank" class="social-icon fiverr-btn">
+    fi.
+</a>
+
+    <a href="https://www.facebook.com/profile.php?id=61569261904781" target="_blank" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/tehniyat007" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@tehniat.mustafa?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon">
+    <i class="fab fa-tiktok"></i>
+</a>
+    </div>
+
+    <div class="copyright-bar">
+        © 2026 Tech Trio | Tehniat Designs | Rawalpindi, Pakistan
+    </div>
+</footer>
+</body>
+</html>
